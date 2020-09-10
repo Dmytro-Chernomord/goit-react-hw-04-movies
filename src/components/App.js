@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Header from './Header/Header';
 import HomeView from '../views/HomeView';
-import fetch from './Api/api';
+// import fetch from './Api/api';
+import OneMovie from './OneMovie/OneMovie';
 
 // console.log(fetch.fetchFindMovie(12));
 // fetch.fetchFindMovie('bad');
@@ -23,7 +24,8 @@ export class App extends Component {
         <Header />
         <Switch>
           <Route exact path="/" component={HomeView} />
-          <Route path="/movies" />
+          <Route exact path="/movies" />
+          <Route path="/movies/:movieId" component={OneMovie} />
           <Route path="/notfound" />
         </Switch>
       </>

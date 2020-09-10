@@ -12,18 +12,6 @@ export class HomeView extends Component {
     this.setState({ movies: data });
     console.log(data);
   }
-  //   async componentDidUpdate(prevState, prevProps) {
-  //     const data = await fetch.fetchPopularMovies();
-  //     if (prevProps !== this.state) {
-  //       this.setState({ movies: data });
-  //     }
-
-  //     // console.log(data);
-  //   }
-  //   componentDidUpdate() {
-  //     const data = this.state.movies.map(el => console.log(el));
-  //     console.log(data);
-  //   }
 
   render() {
     return (
@@ -31,7 +19,7 @@ export class HomeView extends Component {
         {this.state.movies.length > 0 &&
           this.state.movies.map(el => (
             <li key={el.id}>
-              <Link to="/movie">{el.name || el.title}</Link>
+              <Link to={`/movies/${el.id}`}>{el.name || el.title}</Link>
             </li>
           ))}
       </ul>
