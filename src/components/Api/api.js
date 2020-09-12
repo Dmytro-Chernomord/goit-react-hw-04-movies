@@ -20,12 +20,12 @@ const fetchFindMovieById = id =>
 const fetchFindMovieCredits = id =>
   Axios.get(
     `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${API_KEY}`,
-  ).then(res => console.log(res.data));
+  ).then(res => res.data);
 
 const fetchFindMovieReviews = id =>
   Axios.get(
     `https://api.themoviedb.org/3/movie/${id}/reviews?api_key=${API_KEY}&language=en-US&page=1`,
-  ).then(res => console.log(res.data));
+  ).then(res => res.data);
 export default {
   fetchPopularMovies,
   fetchFindMovie,

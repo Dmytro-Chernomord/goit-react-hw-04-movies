@@ -4,6 +4,7 @@ import Header from './Header/Header';
 import HomeView from '../views/HomeView';
 // import fetch from './Api/api';
 import OneMovie from './OneMovie/OneMovie';
+import Searchform from './Searchform/Searchform';
 
 // console.log(fetch.fetchFindMovie(12));
 // fetch.fetchFindMovie('bad');
@@ -24,7 +25,7 @@ export class App extends Component {
         <Header />
         <Switch>
           <Route exact path="/" component={HomeView} />
-          <Route exact path="/movies" />
+          <Route exact path="/movies" component={Searchform} />
           <Route path="/movies/:movieId" component={OneMovie} />
           <Route path="/notfound" />
         </Switch>
