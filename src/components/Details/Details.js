@@ -8,12 +8,10 @@ export class Details extends Component {
   };
 
   async componentDidMount() {
-    // console.log(Number(this.props.match.params.movieId));
     const cast = await fetch.fetchFindMovieCredits(
       Number(this.props.match.params.movieId),
     );
     this.setState({ cast: cast.cast });
-    // console.log(cast.cast);
   }
 
   render() {
@@ -22,7 +20,6 @@ export class Details extends Component {
         {this.state.cast.length > 0 &&
           this.state.cast.map(el => {
             if (el.profile_path) {
-              console.log(el.profile_path);
               return (
                 <li key={el.cast_id}>
                   {el.name}{' '}

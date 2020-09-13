@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import fetch from '../components/Api/api';
-import { Link } from 'react-router-dom';
-import SearchView from './SearchView';
+import SearchView from '../components/Searchform/SearchView';
 
 export class HomeView extends Component {
   state = {
@@ -22,12 +21,6 @@ export class HomeView extends Component {
           movie={this.state.movies}
           location={this.props.location.pathname}
         />
-        {/* {this.state.movies.length > 0 &&
-          this.state.movies.map(el => (
-            <li key={el.id}>
-              <Link to={`/movies/${el.id}`}>{el.name || el.title}</Link>
-            </li>
-          ))} */}
       </>
     );
   }

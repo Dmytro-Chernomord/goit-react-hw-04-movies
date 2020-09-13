@@ -8,12 +8,10 @@ export class Reviews extends Component {
   };
 
   async componentDidMount() {
-    // console.log(Number(this.props.match.params.movieId));
     const reviews = await fetch.fetchFindMovieReviews(
       Number(this.props.match.params.movieId),
     );
     this.setState({ reviews: reviews.results });
-    console.log(reviews.results);
   }
 
   render() {

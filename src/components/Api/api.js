@@ -1,9 +1,8 @@
 import Axios from 'axios';
 const API_KEY = '89b9004c084fb7d0e8ffaadd17cb8254';
-//ASYNC
-// https://api.themoviedb.org/3/movie/popular?api_key=<<api_key>>&language=en-US&page=1
-const fetchPopularMovies = async () =>
-  await Axios.get(
+
+const fetchPopularMovies = () =>
+  Axios.get(
     `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=1`,
   ).then(res => res.data.results);
 
@@ -33,5 +32,3 @@ export default {
   fetchFindMovieCredits,
   fetchFindMovieReviews,
 };
-
-// https://api.themoviedb.org/3/movie/{movie_id}/reviews?api_key=<<api_key>>&language=en-US&page=1
