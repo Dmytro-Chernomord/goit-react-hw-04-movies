@@ -7,3 +7,9 @@
 .active {
   color: red;
 }
+
+.ul {
+  background-color: rgb(107, 156, 156);
+  padding: 30px;
+  margin: 0;
+}

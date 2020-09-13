@@ -1,0 +1,24 @@
+.ul {
+  list-style: none;
+  /* display: flex;
+  flex-wrap: wrap; */
+}
+
+.li {
+  border: 1px solid rgb(105, 105, 224);
+  width: 30%;
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.li:hover {
+  background-color: thistle;
+}
+.a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.img {
+  margin-right: 5px;
+}

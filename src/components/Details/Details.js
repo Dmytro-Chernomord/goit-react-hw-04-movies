@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import fetch from '../Api/api';
-
+import s from './Details.module.css';
 export class Details extends Component {
   state = {
     cast: [],
@@ -16,14 +16,15 @@ export class Details extends Component {
 
   render() {
     return (
-      <ul>
+      <ul className={s.ul}>
         {this.state.cast.length > 0 &&
           this.state.cast.map(el => {
             if (el.profile_path) {
               return (
-                <li key={el.cast_id}>
-                  {el.name}{' '}
+                <li className={s.li} key={el.cast_id}>
+                  <p className={s.p}> {el.name}</p>
                   <img
+                    className={s.img}
                     src={`https://image.tmdb.org/t/p/w300/${el.profile_path}`}
                     alt={el.name}
                   />

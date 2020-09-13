@@ -5,7 +5,7 @@ import routes from '../../routes';
 
 const Header = () => {
   return (
-    <ul>
+    <ul className={s.ul}>
       <NavLink
         className={s.link}
         activeClassName={s.active}

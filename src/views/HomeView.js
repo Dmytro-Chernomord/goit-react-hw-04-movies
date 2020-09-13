@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import fetch from '../components/Api/api';
-import SearchView from '../components/Searchform/SearchView';
+import SearchForm from '../components/SearchForm/SearchForm';
 
 export class HomeView extends Component {
   state = {
@@ -10,14 +10,12 @@ export class HomeView extends Component {
   async componentDidMount() {
     const data = await fetch.fetchPopularMovies();
     this.setState({ movies: data });
-    console.log(data);
-    console.log(this.props.location.pathname);
   }
 
   render() {
     return (
       <>
-        <SearchView
+        <SearchForm
           movie={this.state.movies}
           location={this.props.location.pathname}
         />

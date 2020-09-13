@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
 import fetch from '../components/Api/api';
-import SearchView from '../components/Searchform/SearchView';
+import SearchForm from '../components/SearchForm/SearchForm';
 import queryString from 'query-string';
-import qs from '../utils/queryParse';
+import s from './Searchview.module.css';
 
-export class Searchform extends Component {
+export class SearchView extends Component {
   state = {
     input: '',
     movies: [],
   };
   async componentDidMount() {
     const parseQuery = queryString.parse(this.props.location.search);
-    // console.log(qs(this.props.location.search));
     if (parseQuery.query) {
       const movie = await fetch.fetchFindMovie(parseQuery.query);
 
@@ -45,6 +44,7 @@ export class Searchform extends Component {
         <form onSubmit={this.handleSubmit}>
           <label>
             <input
+              className={s.input}
               onChange={this.handleInputChange}
               value={this.state.input}
               type="text"
@@ -53,7 +53,7 @@ export class Searchform extends Component {
           </label>
         </form>
         {this.state.movies.length > 0 && (
-          <SearchView
+          <SearchForm
             movie={this.state.movies}
             location={`${this.props.location.pathname}${this.props.location.search}`}
           />
@@ -63,4 +63,4 @@ export class Searchform extends Component {
   }
 }
 
-export default Searchform;
+export default SearchView;

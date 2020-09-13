@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-
 import fetch from '../Api/api';
+import s from './Review.module.css';
 
 export class Reviews extends Component {
   state = {
@@ -21,7 +21,8 @@ export class Reviews extends Component {
           this.state.reviews.map(el => {
             return (
               <li key={el.id}>
-                {el.author} <span>{el.content}</span>{' '}
+                <h2> {el.author}</h2>{' '}
+                <span className={s.span}>{el.content}</span>
               </li>
             );
           })

@@ -1,0 +1,12 @@
+.ul {
+  display: flex;
+  /* flex-wrap: wrap; */
+  width: 100%;
+  flex-wrap: wrap;
+}
+.img {
+  width: 50%;
+}
+.p {
+  font-weight: bold;
+}
