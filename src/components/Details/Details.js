@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import fetch from '../Api/api';
 import s from './Details.module.css';
+
 export class Details extends Component {
   state = {
     cast: [],

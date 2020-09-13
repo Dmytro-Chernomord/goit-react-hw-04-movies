@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import fetch from '../Api/api';
 import s from './Review.module.css';
+import PropTypes from 'prop-types';
 
 export class Reviews extends Component {
+  // static propTypes = {
+  // };
   state = {
     reviews: [],
   };

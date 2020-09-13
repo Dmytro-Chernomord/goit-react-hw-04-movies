@@ -11,7 +11,7 @@ a {
 }
 
 a:visited {
-  color: rgb(85, 71, 71);
+  /* color: rgb(85, 71, 71); */
 }
 
 a:hover {

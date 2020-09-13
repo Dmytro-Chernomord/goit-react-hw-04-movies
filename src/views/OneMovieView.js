@@ -66,7 +66,7 @@ export class OneMovie extends Component {
             <p>{overview}</p>
           </div>
         </div>
-        <ul>
+        <ul className={s.flex}>
           <li className={s.li}>
             <Link to={`${this.props.match.url}/cast`}>Casts</Link>
           </li>

@@ -2,9 +2,9 @@ import { Link } from 'react-router-dom';
 import React from 'react';
 import s from './SearchForm.module.css';
 import defImg from '../default.jpg';
+import PropTypes from 'prop-types';
 
 const SearchForm = props => {
-  console.log(props.movie);
   return (
     <ul className={s.ul}>
       {props.movie.length > 0 &&
@@ -35,4 +35,8 @@ const SearchForm = props => {
   );
 };
 
+SearchForm.propTypes = {
+  movie: PropTypes.array.isRequired,
+  location: PropTypes.string.isRequired,
+};
 export default SearchForm;
