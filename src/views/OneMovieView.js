@@ -9,16 +9,23 @@ import s from './OneMovieView.module.css';
 export class OneMovie extends Component {
   state = {
     movie: {},
+    queryHistiory: null,
+    error: null,
   };
   async componentDidMount() {
     const movie = await fetch.fetchFindMovieById(
       this.props.match.params.movieId,
     );
     this.setState({ movie });
+    this.setState({ queryHistiory: this.props.location.state.from });
   }
+
   handleGoBack = () => {
     const { state } = this.props.location;
     const { history } = this.props;
+    if (this.state.queryHistiory) {
+      history.push(this.state.queryHistiory);
+    }
     if (state) {
       history.push(state.from);
     } else {
@@ -41,6 +48,7 @@ export class OneMovie extends Component {
         </button>
         <div className={s.flex}>
           <div>
+            {this.state.error && <h1>Somethithg Wrong Try Again</h1>}
             <img
               className={s.img}
               width="300"
@@ -68,10 +76,24 @@ export class OneMovie extends Component {
         </div>
         <ul className={s.flex}>
           <li className={s.li}>
-            <Link to={`${this.props.match.url}/cast`}>Casts</Link>
+            <Link
+              to={{
+                pathname: `${this.props.match.url}/cast`,
+                state: { from: this.state.queryHistiory },
+              }}
+            >
+              Casts
+            </Link>
           </li>
           <li className={s.li}>
-            <Link to={`${this.props.match.url}/reviews`}>Review</Link>
+            <Link
+              to={{
+                pathname: `${this.props.match.url}/reviews`,
+                state: { from: this.state.queryHistiory },
+              }}
+            >
+              Review
+            </Link>
           </li>
         </ul>
         <Route path={`${this.props.match.path}/cast`} component={Details} />
